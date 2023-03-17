@@ -30,6 +30,11 @@ jobs:
         id: extract_branch
 
       - name: Get branch name (new)
-        shell: bash
         run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >>$GITHUB_OUTPUT
         id: extract_branch_new
+
+      - name: display branch 1
+        run: echo "Result 1 - branch is ${{ steps.extract_branch.outputs.branch }}"
+
+      - name: display branch 2
+        run: echo "Result 2 - branch is ${{ steps.extract_branch_new.outputs.branch }}"
