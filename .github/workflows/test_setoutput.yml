@@ -29,3 +29,6 @@ jobs:
           echo ${GITHUB_REF#refs/heads/}
         id: extract_branch
 
+      - name: Get branch name (new)
+        shell: 'bash run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >>$GITHUB_OUTPUT'
+        id: extract_branch_new
