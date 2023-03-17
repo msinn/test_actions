@@ -16,13 +16,6 @@ jobs:
         python-version: [ '3.9', '3.10' ]
     name: Python ${{ matrix.python-version }}
     steps:
-      - name: Setup OS (Ubuntu)
-        run: |
-          sudo apt-get update
-          sudo apt-get install libudev-dev
-          sudo apt-get install librrd-dev libpython3-dev
-          sudo apt-get install gcc --only-upgrade
-
       - name: Get branch name via set-output
         run: |
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
