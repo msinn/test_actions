@@ -34,7 +34,7 @@ jobs:
         id: extract_branch_new
 
       - name: display branch 1
-        run: echo "Result 1 - branch is ${{ steps.extract_branch.outputs.branch }}"
+        run: echo "Result via set-output - branch is '${{ steps.extract_branch.outputs.branch }}'" >> $GITHUB_STEP_SUMMARY
 
       - name: display branch 2
-        run: echo "Result 2 - branch is ${{ steps.extract_branch_new.outputs.branch }}"
+        run: echo "Result (new) - branch is '${{ steps.extract_branch_new.outputs.branch }}'" >> $GITHUB_STEP_SUMMARY
