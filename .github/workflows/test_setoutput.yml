@@ -26,8 +26,13 @@ jobs:
         run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >>$GITHUB_OUTPUT
         id: extract_branch_new
 
-      #- name: display branch 1
-      - run-name: display branch 1 - Get branch via set-output - event ${{ github.event_name }}
+      - name: Display Info
+        run: |
+          echo github.event_name: ${{ github.event_name }}
+          echo github.ref:        ${{ github.ref }}
+
+      - name: display branch 1
+        #run-name: display branch 1 - Get branch via set-output - event ${{ github.event_name }}
         run: echo "branch via set-output - branch is '${{ steps.extract_branch.outputs.branch }}'"
 
       - name: display branch 2
