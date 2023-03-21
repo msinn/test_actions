@@ -27,11 +27,11 @@ jobs:
         id: extract_branch_new
 
       - name: display branch 1
-        run-name: Get branch via set-output - branch is '${{ steps.extract_branch.outputs.branch }} - event ${{ github.event_name }}
+        run-name: Get branch via set-output - event ${{ github.event_name }}
         run: echo "branch via set-output - branch is '${{ steps.extract_branch.outputs.branch }}'"
 
       - name: display branch 2
-        run-name: Get branch (new) - branch is '${{ steps.extract_branch.outputs.branch }} - event ${{ github.event_name }}
+        run-name: Get branch (new) - event ${{ github.event_name }}
         run: echo "branch (new) - branch is '${{ steps.extract_branch_new.outputs.branch }}'"
 
       - name: display base branch on PR
