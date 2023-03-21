@@ -28,8 +28,9 @@ jobs:
 
       - name: Display Info
         run: |
-          echo github.event_name: ${{ github.event_name }}
-          echo github.ref:        ${{ github.ref }}
+          echo github.event_name ${{ github.event_name }}
+          echo github.ref        ${{ github.ref }}
+          echo github.workflow   ${{ github.workflow }}
 
       - name: display branch 1
         #run-name: display branch 1 - Get branch via set-output - event ${{ github.event_name }}
