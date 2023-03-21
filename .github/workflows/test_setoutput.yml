@@ -34,9 +34,10 @@ jobs:
           echo github.actor             ${{ github.actor }}
           echo github.ref_name          ${{ github.ref_name }}
           echo github.ref               ${{ github.ref }}
-          echo github.base_ref          ${{ github.base_ref }}
-          echo github.head_ref          ${{ github.head_ref }}
-          echo github.pull_request.base.ref  ${{ github.pull_request.base.ref }}
+          echo github.base_ref          '${{ github.base_ref }}'
+          echo github.head_ref          '${{ github.head_ref }}'
+          echo github.pull_request.base.ref  '${{ github.pull_request.base.ref }}'
+          echo steps.extract_branch_new.outputs.branch '${{ steps.extract_branch_new.outputs.branch }}'
 
       - name: display branch 1
         #run-name: display branch 1 - Get branch via set-output - event ${{ github.event_name }}
